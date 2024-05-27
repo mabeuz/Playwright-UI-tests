@@ -10,7 +10,7 @@ test('auto waiting', async({page})=>{
     const successButton = page.locator('.bg-success')
 
     //await successButton.click()
-    
+
     //const text = await successButton.textContent()
 
     await successButton.waitFor({state:"attached"})

@@ -6,6 +6,12 @@ The original repo is here: https://github.com/akveo/ngx-admin
 
 Application from Udemy course https://github.com/bondar-artem/pw-practice-app
 
+Install:
+- node js
+- git
+- Playwright extension
+> npm install --force
+
 Compile the application used to test:
 > npm start
 url: http://localhost:4200/pages/iot-dashboard
@@ -37,3 +43,14 @@ Generate Allure Report:
 
 Visual comparision with screenshots
 > npx playwright test --update-snapshots    //run all tests and snapshots are going to be updated
+
+Docker
+> docker build -t pw-pageobject-test .
+> docker images
+> docker run -it pw-pageobject-test
+run the test in package.json:
+> npm run pageObjects-chrome
+exit from container in the console ctrl + d
+
+run docker compose
+> docker-compose up --build

@@ -13,7 +13,7 @@ import type { TestOptions } from './test-options';
  */
 export default defineConfig<TestOptions>({
   //timeout: 10000 -- for test wait for 10 sec,
-  //globalTimeout: 60000 -- 
+  //globalTimeout: 60000 --
   expect:{
     timeout:2000,
     toHaveScreenshot: {maxDiffPixels:150} //if there are unstable ui and no precise images
@@ -44,8 +44,8 @@ export default defineConfig<TestOptions>({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    //actionTimeout: 
-    //navigationTimeout: 
+    //actionTimeout:
+    //navigationTimeout:
     video: {
       mode: 'on',
       size: {width:1920, height:1080}
@@ -56,7 +56,7 @@ export default defineConfig<TestOptions>({
   projects: [
     {
       name: 'dev',
-      use: { 
+      use: {
         ...devices['Desktop Chrome'],
         baseURL: 'http://localhost:4200/'
        },
@@ -64,7 +64,7 @@ export default defineConfig<TestOptions>({
     },
     {
       name: 'staging',
-      use: { 
+      use: {
         ...devices['Desktop Chrome'],
         baseURL: 'http://localhost:4200/'
        },
@@ -121,4 +121,9 @@ export default defineConfig<TestOptions>({
   //   url: 'http://127.0.0.1:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
+
+  webServer: {
+    command: 'npm run start',
+    url: 'http://localhost:4200/'
+  }
 });
